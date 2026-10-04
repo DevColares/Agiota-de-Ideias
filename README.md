@@ -1,5 +1,5 @@
 # 😈 Agiota de Ideias (Fiscal de Execução) 🤖📚
-### Bot de Telegram com Node.js, TypeScript, Gemini 2.5 Flash e Firebase Firestore
+### Bot de Telegram com Node.js, TypeScript, Gemini 3.5 Flash e Firebase Firestore
 
 > Um bot de cobrança implacável para quem sofre do "mal do acumulador de abas abertas". Envie links de artigos, posts ou vídeos, receba um resumo executivo com um checklist prático em 3 passos e sofra a cobrança do "Agiota" até executar ou pedir arrego!
 
@@ -13,7 +13,7 @@ flowchart TD
     
     subgraph Processamento
         Bot -->|Extrai URL| Scraper[🕷️ Scraper Axios + Cheerio]
-        Scraper -->|Texto limpo| Gemini[🧠 Gemini 2.5 Flash]
+        Scraper -->|Texto limpo| Gemini[🧠 Gemini 3.5 Flash]
         Gemini -->|Structured JSON: Título + 3 Ações + Prazo| Firestore[(🔥 Firebase Firestore)]
         Firestore -->|Confirmação e ID curto| Bot
     end
@@ -38,7 +38,7 @@ flowchart TD
 
 - **Linguagem & Runtime:** Node.js (v20+) com TypeScript
 - **Bot Framework:** `telegraf` (v4)
-- **Inteligência Artificial:** `@google/genai` (Google Gen AI SDK com modelo `gemini-2.5-flash`)
+- **Inteligência Artificial:** `@google/genai` (Google Gen AI SDK com modelo `gemini-3.5-flash`)
 - **Banco de Dados NoSQL:** `firebase-admin` (Cloud Firestore)
 - **Web Scraping:** `axios` e `cheerio`
 - **Agendamento Periódico:** `node-cron`
@@ -126,7 +126,7 @@ Preencha as variáveis no seu `.env`:
 ```env
 TELEGRAM_BOT_TOKEN="seu_token_do_telegram"
 GEMINI_API_KEY="sua_chave_do_gemini"
-GEMINI_MODEL="gemini-2.5-flash"
+GEMINI_MODEL="gemini-3.5-flash"
 CRON_SCHEDULE="0 * * * *"
 FIREBASE_SERVICE_ACCOUNT_PATH="./serviceAccountKey.json"
 ```

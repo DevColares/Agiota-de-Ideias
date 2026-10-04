@@ -8,7 +8,7 @@ export class GeminiService {
 
   constructor() {
     this.ai = new GoogleGenAI({ apiKey: ENV.GEMINI_API_KEY });
-    this.model = ENV.GEMINI_MODEL || 'gemini-2.5-flash';
+    this.model = ENV.GEMINI_MODEL || 'gemini-3.5-flash';
   }
 
   /**

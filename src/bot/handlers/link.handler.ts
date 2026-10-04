@@ -22,11 +22,7 @@ export async function handleLinkMessage(ctx: Context): Promise<boolean> {
   }
 
   // Notifica o usuário que o processamento começou
-  const statusMsg = await ctx.reply(
-    `🔍 *Link detectado!*\n` +
-    `Lendo o conteúdo da página e sintetizando com o *Gemini 2.5 Flash*... Aguarde um instante! 🧠⚡`,
-    { parse_mode: 'Markdown' }
-  );
+  const statusMsg = await ctx.reply(`⏳ Analisando seu link...`);
 
   try {
     // 1. Scraping da página

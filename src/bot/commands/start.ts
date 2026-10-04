@@ -8,7 +8,7 @@ export async function handleStart(ctx: Context): Promise<void> {
     `Cansado de salvar 500 links, abrir 80 abas no navegador e fingir que vai ler depois? *Seus problemas (ou pesadelos) começaram!*\n\n` +
     `🎯 *Como eu funciono:*\n` +
     `1. *Envie qualquer link* de artigo, vídeo, post ou notícia aqui no chat.\n` +
-    `2. Eu leio o conteúdo e uso o *Gemini 2.5 Flash* para resumir a essência em 1 frase e criar um *Checklist de 3 Passos Práticos*.\n` +
+    `2. Eu leio o conteúdo e uso o *Gemini 3.5 Flash* para resumir a essência em 1 frase e criar um *Checklist de 3 Passos Práticos*.\n` +
     `3. Eu estipulo um prazo de execução (1 a 3 dias).\n` +
     `4. Se o prazo vencer e você não tiver concluído, meu *Cron Job de Cobrança* vai te mandar mensagens sarcásticas e insistentes até você agir!\n\n` +
     `📋 *Comandos de Controle:*\n` +
