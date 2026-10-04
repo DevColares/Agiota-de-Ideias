@@ -54,5 +54,18 @@ export function setupBot(): Telegraf {
     console.error(`❌ [Telegraf] Erro durante processamento do update ${ctx.update.update_id}:`, err);
   });
 
+  // Registra o menu de comandos visível no botão "/" do Telegram
+  bot.telegram.setMyCommands([
+    { command: 'start',     description: '🤖 Iniciar o bot e ver instruções' },
+    { command: 'pendentes', description: '📋 Listar seus links pendentes' },
+    { command: 'feito',     description: '✅ Marcar link como concluído  /feito <id>' },
+    { command: 'adiar',     description: '⏳ Adiar prazo de cobrança  /adiar <id> <dias>' },
+    { command: 'ajuda',     description: '❓ Ver instruções do bot' },
+  ]).then(() => {
+    console.log('✅ [Telegram] Menu de comandos "/" registrado com sucesso!');
+  }).catch((err: any) => {
+    console.warn('⚠️ [Telegram] Falha ao registrar menu de comandos:', err.message);
+  });
+
   return bot;
 }
