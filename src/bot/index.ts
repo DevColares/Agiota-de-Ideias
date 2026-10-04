@@ -56,15 +56,24 @@ export function setupBot(): Telegraf {
 
   // Registra o menu de comandos visível no botão "/" do Telegram
   bot.telegram.setMyCommands([
-    { command: 'start',     description: '🤖 Iniciar o bot e ver instruções' },
+    { command: 'start', description: '🤖 Iniciar o bot e ver instruções' },
     { command: 'pendentes', description: '📋 Listar seus links pendentes' },
-    { command: 'feito',     description: '✅ Marcar link como concluído  /feito <id>' },
-    { command: 'adiar',     description: '⏳ Adiar prazo de cobrança  /adiar <id> <dias>' },
-    { command: 'ajuda',     description: '❓ Ver instruções do bot' },
+    { command: 'feito', description: '✅ Marcar link como concluído' },
+    { command: 'adiar', description: '⏳ Adiar prazo de cobrança' },
+    { command: 'ajuda', description: '❓ Ver instruções do bot' },
   ]).then(() => {
     console.log('✅ [Telegram] Menu de comandos "/" registrado com sucesso!');
   }).catch((err: any) => {
     console.warn('⚠️ [Telegram] Falha ao registrar menu de comandos:', err.message);
+  });
+
+  // Ativa o botão de menu (☰) ao lado da caixa de texto
+  bot.telegram.setChatMenuButton({
+    menuButton: { type: 'commands' },
+  }).then(() => {
+    console.log('✅ [Telegram] Botão de menu ☰ ativado com sucesso!');
+  }).catch((err: any) => {
+    console.warn('⚠️ [Telegram] Falha ao ativar botão de menu:', err.message);
   });
 
   return bot;
