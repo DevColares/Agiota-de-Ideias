@@ -1,0 +1,38 @@
+{
+  "name": "agiota-de-ideias",
+  "version": "1.0.0",
+  "description": "Assistente Cobrador de Links no Telegram com Gemini, Firebase Firestore e Cron Job",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test:link": "tsx scripts/test-link.ts"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "gemini",
+    "genai",
+    "firestore",
+    "node-cron",
+    "productivity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^2.27.0",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "firebase-admin": "^13.0.0",
+    "node-cron": "^3.0.3",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/node-cron": "^3.0.11",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
